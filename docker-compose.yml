@@ -31,6 +31,13 @@ services:
       }'
     stdin_open: true
     tty: true
+  app-school-front:
+    image: arijabid/student-front-image:1.0.0
+    restart: on-failure
+    ports:
+      - "8585:85"
+    depends_on:
+      - app-school-back
 
 volumes:
   db :
